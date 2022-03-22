@@ -1,0 +1,24 @@
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: black;
+  color: darkgray;
+}
+
+nav {
+  font-size: 20px;
+}
+
+nav a {
+  color: red;
+  margin: 30px;
+}
+
+nav button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: red;
+  text-decoration: underline;
+  cursor: pointer;
+}
