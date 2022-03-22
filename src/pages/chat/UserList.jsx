@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getUsersService } from "../../services/chat.services"
+import { getUsersService, startChatService } from "../../services/chat.services"
 
 function UserList() {
   const [users, setUsers] = useState(null);
@@ -23,6 +23,12 @@ function UserList() {
   const handleClick = async (user) => {
     console.log(`Trying to start a chat with ${user.name}`)
     //todo Here we will try to go to chat or create one if it doesn't exist
+    try {
+      const response = await startChatService(user._id)
+      navigate(`/chat/${response.data._id}`);
+    } catch(err) {
+      navigate("/error");
+    }
   }
 
   if (!users) {

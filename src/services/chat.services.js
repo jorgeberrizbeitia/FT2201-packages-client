@@ -16,6 +16,16 @@ const getUsersService = () => {
   return service.get("/users")
 }
 
+const startChatService = (userId) => {
+  return service.post(`/start/${userId}`)
+}
+
+const getAllMessagesService = (chatId) => {
+  return service.get(`/messages/${chatId}`)
+}
+
 export {
-  getUsersService
+  getUsersService,
+  startChatService,
+  getAllMessagesService
 }
